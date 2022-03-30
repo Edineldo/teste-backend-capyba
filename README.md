@@ -3,7 +3,7 @@
 Repositório referente a implementação do desafio de back-end proposto no processo seletivo da Capyba Software.
 A API desenvolvida dá suporte a um pseudo micro sistema de agendamento de aluguel de carros.
 
-## A aplicação foi desenvolvida em Node.js em conjunto com o ORM Sequelize, este responsável pela interação da aplicação com o banco de dados
+# A aplicação foi desenvolvida em Node.js em conjunto com o ORM Sequelize, este responsável pela interação da aplicação com o banco de dados
 
 ### Features propostas:
 
