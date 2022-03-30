@@ -19,3 +19,9 @@ A API desenvolvida dá suporte a um pseudo micro sistema de agendamento de alugu
 - Testes :x:
 - SWAGGER :white_check_mark:
 - README :white_check_mark:
+
+- Bônus:
+
+- Deploy :white_check_mark:
+- Endpoint para alterar senha com confirmação da senha atual :white_check_mark:
+- Seed :white_check_mark:
