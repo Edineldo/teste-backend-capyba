@@ -29,5 +29,24 @@ A aplicação foi desenvolvida em Node.js em conjunto com o ORM Sequelize, este 
 Todos os fluxos tecnicamente dependem que o usuário esteja registrado. Daí, a partir do endpoint de login, é gerado um token,
 usado para a validação de sessão em todos os outros fluxos. Essa sessão guardada no banco é apagada com o endpoint de logout.
 
-Com a sessão gerada, o usuário consegue ter acesso a lista de modelos disponíveis  
+A partir do registro, o endpoint de mandar um email com um token de verificação. Ele reenvia caso seja invocado de novo, sempre guardando o novo token gerado. Daí pode ser chamado o endpoint de confirmação que receberá um token passado pelo usuário e compara com o enviado por email.
+
+Com a sessão gerada, o usuário consegue ter acesso a lista de modelos disponíveis, com opções de filtragem por marca/modelo, tipo (picape, esportivo, etc), e opções de ordenação, tanto alfabética, por nome de modelo, como crescente por preço de taxa de aluguel.
+Esse endpoint também faz a vericifação prévia se o usuário realizou a confirmação de email, se sim, ele terá acesso a itens da persistidos com o atributo de restrito, na tabela de modelos.
+
+O fluxo de agendamento de aluguel criando um agendamento de aluguel via id de modelo passado pelo usuário. Também listando os agendamentos já feitos pelo dado usuário, e possibilitanto o cancelamento de um desses.
+
+### Estrutura do projeto
+
+| Diretório         | Responsabilidade |
+|-------------------|------------------------------------|
+| **/migrations**     |  *Migrations do banco de dados* |
+| **/seedeers**     |  *Seeders do banco de dados* |
+| **/src/routes**       |  *Declaração dos endpoints* |
+| **/src/controllers**  | *Controllers da aplicação* |
+| **/src/iddleware**   | *Middlewares da aplicação* |
+| **/src/models**       | *Modelos dos objetos da aplicação, e suas relações entre si* |
+| **/src/repositories** | *Métodos responsáveis por se comunicar diretamente com o BD*
+| **/src/services**     | *Serviços responsáveis por gerir a regra de negócio da aplicação* |
+
 
