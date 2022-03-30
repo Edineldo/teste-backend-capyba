@@ -36,17 +36,8 @@ Esse endpoint também faz a vericifação prévia se o usuário realizou a confi
 
 O fluxo de agendamento de aluguel criando um agendamento de aluguel via id de modelo passado pelo usuário. Também listando os agendamentos já feitos pelo dado usuário, e possibilitanto o cancelamento de um desses.
 
-### Estrutura do projeto
 
-| Diretório         | Responsabilidade |
-|-------------------|------------------------------------|
-| **/migrations**     |  *Migrations do banco de dados* |
-| **/seedeers**     |  *Seeders do banco de dados* |
-| **/src/routes**       |  *Declaração dos endpoints* |
-| **/src/controllers**  | *Controllers da aplicação* |
-| **/src/iddleware**   | *Middlewares da aplicação* |
-| **/src/models**       | *Modelos dos objetos da aplicação, e suas relações entre si* |
-| **/src/repositories** | *Métodos responsáveis por se comunicar diretamente com o BD*
-| **/src/services**     | *Serviços responsáveis por gerir a regra de negócio da aplicação* |
+### Instalação do projeto
+
 
 
