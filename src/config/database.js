@@ -1,9 +1,17 @@
+require('dotenv/config');
+
+const dbDialect = process.env.DB_DIALECT;
+const dbHost = process.env.DB_HOST;
+const dbUsername = process.env.DB_USERNAME;
+const dbPassword = process.env.DB_PASSWORD;
+
+
 const database = {
-    dialect: "postgres",
-    host: "tuffi.db.elephantsql.com",
-    database: "ngfphrkl",
-    username: "ngfphrkl",
-    password: "fJA3YTAirGkO-8OpF6evwr9ePuDUHri-",
+    dialect: dbDialect,
+    host: dbHost,
+    database: dbUsername,
+    username: dbUsername,
+    password: dbPassword,
     define: {
         timeStamps: true,
         underScored: true,

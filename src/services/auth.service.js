@@ -4,11 +4,9 @@ const UserRepository = require('../repositories/users.reporsitory');
 const nodemailer = require('nodemailer'); 
 const jwt = require('jsonwebtoken');
 
-///AJEITAR NO ENV//////////////////////////
-const secret = "gordolinha1010";
-const senderEmail = "capybatest1123@outlook.com";
-const senderPassword = "robotica@ifif";
-//AJEITAR NO ENV//////////////////////////
+const secret = process.env.JWT_SECRET;
+const senderEmail = process.env.NODEMAILER_USER;
+const senderPassword = process.env.NODEMAILER_PASS;
 
 const transporter = nodemailer.createTransport({
     service: "hotmail",
