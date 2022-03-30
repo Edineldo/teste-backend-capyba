@@ -1,19 +1,22 @@
-const { Op } = require('sequelize');
+const { Sequelize, Op } = require('sequelize');
 
 const ModelInfos = require('../models/ModelInfos');
 const CarsModel = require('../models/Cars');
 const RentSchedulesModel = require('../models/Rent_schedules');
 
-const getCars = async (type, restrict=false, search = "", page = 1, perPage = 15) => {
+const getCars = async (type, restrict, search, page, perPage, ordering) => {
     const whereConditions = brandModelFilter(search) || {};
     typeFilter(type, whereConditions);
     restrictFilter(restrict, whereConditions);
-    console.log(whereConditions);
+    const attributes = ['id', 'model', 'type', 'brand', 'fee']
+    restrict ? attributes.push('restrict') : false;
 
     return ModelInfos.findAndCountAll({
         where: whereConditions,
-        offset: (page - 1) * perPage,
+        attributes: attributes,
+        offset: ((page - 1) * perPage),
         limit: perPage,
+        order: Sequelize.col(ordering || 'id'),
     });
 }
 
@@ -90,10 +93,22 @@ const updateScheduledCar = async (car_id, scheduled) => CarsModel.update({
 }, {
     where: {id: car_id},
     returning: true,
-    plain: true,
+    //plain: true,
 }) 
+
+const getMySchedules = async (user_id) => RentSchedulesModel.findAndCountAll({
+    where: {
+        user_id,
+    },
+});
+
+const getScheduleById = async (id) => RentSchedulesModel.findByPk(id);
 
 module.exports = {
     getCars,
     getAvailableCarsByModel,
+    createRentSchedule,
+    updateScheduledCar,
+    getMySchedules,
+    getScheduleById,
 };

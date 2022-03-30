@@ -29,6 +29,10 @@ class Cars extends Model {
                 type: DataTypes.DATE,
                 allowNull: false,
             },
+            already_scheduled: {
+                type: DataTypes.BOOLEAN,
+                allowNull: false,
+            }
         } ,{
             sequelize,
             timestamps: true,
