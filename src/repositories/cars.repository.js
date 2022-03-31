@@ -43,34 +43,6 @@ const restrictFilter = (restrict, conditions) => {
         conditions.restrict = { [Op.eq]: false };
     }
 }
-// const getCars = async (type, restrict = false, search = "", page = 0, perPage = 15) => ModelInfos.findAndCountAll({
-//     const whereConditions = {};
-//     where: {
-//         [Op.and]: [
-//             {
-//                 [Op.or]: [
-//                     { model:  { [Op.substring]: search } },
-//                     { brand: { [Op.substring]: search }},
-//                 ]
-//             },
-//             { type: { [Op.substring] : type } },
-//             { 
-//                 [Op.or]: [
-//                     {restrict: { [Op.not]: restrict }},
-//                     {restrict: { [Op.eq]: restrict }},
-//                 ]
-//              }
-//         ]
-//     },
-//     include: [
-//         {
-//             model: CarsModel,
-//             as: 'car_instance',
-//         },
-//     ],
-//     offset: page * perPage,
-//     limit: perPage,
-// });
 
 const getAvailableCarsByModel = async (id) => ModelInfos.findOne({
     where:{id},
@@ -93,7 +65,6 @@ const updateScheduledCar = async (car_id, scheduled) => CarsModel.update({
 }, {
     where: {id: car_id},
     returning: true,
-    //plain: true,
 }) 
 
 const getMySchedules = async (user_id) => RentSchedulesModel.findAndCountAll({

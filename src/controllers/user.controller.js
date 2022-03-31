@@ -23,7 +23,6 @@ async function login(req, res){
         if (!existsEmail) return res.status(401).json({ message: "Não foi possivel autenticar o email" });
         console.log(password);
 
-        //const passwordMatches = await UserService.compareHashPassword(password, existsEmail.password);
         const passwordMatches = existsEmail.password === password;
         if (!passwordMatches) return res.status(401).json({ message: "Não foi possível autenticar a senha" });
         

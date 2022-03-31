@@ -23,7 +23,6 @@ const updatePassword = async(id, new_password) => UsersModel.update(
   }, {
     where: { id: id },
     returning: true,
-    plain: true,
   },
 );
 
@@ -35,7 +34,6 @@ const updateRegister = async (updateBody) => UsersModel.update({
 } , {
   where: { id: updateBody.id },
   returning: true,
-  plain: true,
 });
 
 const verifyUserUnconfirmedEmail = async (user_id) => UsersModel.findOne({
