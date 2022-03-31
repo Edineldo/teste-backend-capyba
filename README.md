@@ -37,6 +37,44 @@ Esse endpoint também faz a vericifação prévia se o usuário realizou a confi
 O fluxo de agendamento de aluguel criando um agendamento de aluguel via id de modelo passado pelo usuário. Também listando os agendamentos já feitos pelo dado usuário, e possibilitanto o cancelamento de um desses.
 
 
+### Estrutura do projeto
+
+| **Diretório**  | **Responsabilidade** |
+| ------------- | ------------- |
+| */Migrations* | *Migrations do Banco de dados* |
+| */Seeders* | *Seeders usadas no Banco de dados* |
+| */src/config* | *Arquivo de configuração do BD* |
+| */src/controllers* | *Controllers da aplicação* |
+| */src/middlewares* | *Middlewares da aplicação* |
+| */src/models* | *Modelos dos objetos implementados* |
+| */src/controllers* | *Controllers da aplicação* |
+| */src/repositories* | *Repositórios de métodos de interação direta com o BD* |
+| */src/Router* | *Rotas da aplicação* |
+| */src/services* | *Métodos responsáveis de manter a regra de negócio * |
+
+
+### Descrição das rotas:
+| **'/user'** | **Funcionalidade** |
+|-------------|--------------------|
+|post: '/register'| registro de usuário, com atributos recebidos por body |
+|post: '/login'| criação de sessão, com atributos recebidos por body |
+|delete: 'login'| encerramento da sessão través do token da mesma passada pelo header authorization |
+|put: '/password'| atualização de senha, com sessão verificada por header, e atributos de senha atual e nova recebidos por body |
+|put: '/register'| atualização dos demais dados de usuário, com atributos recebidos via body |
+
+| **'/auth'** | **Funcionalidade** |
+|-------------|--------------------|
+|post: '/send'| envia email de confirmação para o email de usuário cadastrado e guarda o código enviado, sessão é verificada via header |
+|post: '/confirm'| verifica o código passado via body, com o enviado ao email
+
+| **'/cars'** | **Funcionalidade** |
+|-------------|--------------------|
+|get: '/cars'| verifica sessão do usuário via header, e lista itens de acordo com os campos de filtragem passados por query, verificando previamente confirmação do email, exibindo assim os itens restritos ou não |
+|post: '/schedule'| Cria agendamento de aluguel, com atributos recebidos via body |
+|get: '/schedule'| Lista agendamentos do usuário na sessão, verificada via header |
+|delete: '/schedule'| Cancela agendamento de aluguel, com atributos recebidos via body |
+
+
 ### Instalação do projeto
 
 -primeiro passo: é necessária a instalação do Node.js (versão LTS, recomendada) na máquina, que pode ser realizada nesse site: https://nodejs.org/en/download/;
