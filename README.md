@@ -21,7 +21,6 @@ A aplicação foi desenvolvida em Node.js em conjunto com o ORM Sequelize, este 
 
 - Bônus:
 
-- Deploy :white_check_mark:
 - Endpoint para alterar senha com confirmação da senha atual :white_check_mark:
 - Seed :white_check_mark:
 
