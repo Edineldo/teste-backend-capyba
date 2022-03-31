@@ -39,5 +39,40 @@ O fluxo de agendamento de aluguel criando um agendamento de aluguel via id de mo
 
 ### Instalação do projeto
 
+-primeiro passo: é necessária a instalação do Node.js (versão LTS, recomendada) na máquina, que pode ser realizada nesse site: https://nodejs.org/en/download/;
+
+-segundo passo: Download deste repositório para a máquina, que pode ser via ZIP ou a seguinte linha de comando:
+```
+-git clone https://github.com/Edineldo/teste-backend-capyba.git
+```
+-terceiro passo: Instalação das dependências no diretório do projeto via:
+```
+npm install
+```
+
+-configuração das variáveis de ambiente: Anexado junto ao email, existe um arquivo txt que serve como uma cópia dos valores do arquivo que configura as variáveis de ambiente na rzis do projeto. Na rais do repositório clonado, existe um .envexample, basta renomealo para .env e copiar o conteúdo contido no txt junto ao email. Essas variáveis configram alguns valores importantes no projeto, tais quais usados na conexão com o banco de daos, verificação de email, e geração de sessão.
+
+-Ultimo passo: Basta executar o projeto, usando:
+```
+npm start
+```
+
+-bônus: Os dados já existe um banco online, que persiste os dados da aplicação. Mas caso seja usado uma conexão com outro banco, o banco pode ser migrado usando o seguinte comando:
+```
+npx sequelize-cli db:migrate
+```
+
+em seguida, populado com as seeds que populam as seguintes tabelas:
+Users;
+Modelinfos;
+Cars;
+
+```
+npx sequelize-cli db:seed:all
+```
+faz com que todas sejam executadas de uma vez, em ordem de criação. Caso queira executar uma de cada vez:
+```
+sequelize db:seed --sedd #nome da seed específica
+```
 
 
