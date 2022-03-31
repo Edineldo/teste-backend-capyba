@@ -50,7 +50,7 @@ O fluxo de agendamento de aluguel criando um agendamento de aluguel via id de mo
 npm install
 ```
 
--configuração das variáveis de ambiente: Anexado junto ao email, existe um arquivo txt que serve como uma cópia dos valores do arquivo que configura as variáveis de ambiente na rzis do projeto. Na raiz do repositório clonado, existe um .envexample, basta renomealo para .env e copiar o conteúdo contido no txt junto ao email. Essas variáveis configram alguns valores importantes no projeto, tais quais usados na conexão com o banco de daos, verificação de email, e geração de sessão.
+-configuração das variáveis de ambiente: Anexado junto ao email, existe um arquivo txt que serve como uma cópia dos valores do arquivo que configura as variáveis de ambiente na raiz do projeto. Na raiz do repositório clonado, existe um .envexample, basta renomealo para .env e copiar o conteúdo contido no txt junto ao email. Essas variáveis configram alguns valores importantes no projeto, tais quais usados na conexão com o banco de daos, verificação de email, e geração de sessão.
 
 -Ultimo passo: Basta executar o projeto, usando:
 ```
