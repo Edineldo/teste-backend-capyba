@@ -16,7 +16,7 @@ A aplicação foi desenvolvida em Node.js em conjunto com o ORM Sequelize, este 
 - Endpoint para confirmar token recebido por email :white_check_mark:
 - Endpoint para reenviar token para email :white_check_mark:
 - Testes :x:
-- SWAGGER :white_check_mark:
+- SWAGGER :x:
 - README :white_check_mark:
 
 - Bônus:
