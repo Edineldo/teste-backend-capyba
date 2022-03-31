@@ -72,7 +72,7 @@ npx sequelize-cli db:seed:all
 ```
 faz com que todas sejam executadas de uma vez, em ordem de criação. Caso queira executar uma de cada vez:
 ```
-sequelize db:seed --sedd #nome da seed específica
+sequelize db:seed --seed #nome da seed específica
 ```
 
 
