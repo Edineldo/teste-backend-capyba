@@ -19,8 +19,6 @@ async function getRentableModels(req, res){
         return res.status(201).json(rentCars);
     }catch(e){
         res.status(500).json({ message: "Erro desconhecido ao listar carros", e });
-        console.log(e);
-
     }
 }
 

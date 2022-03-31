@@ -36,7 +36,6 @@ async function login(req, res){
         return res.status(201).json({ message: "Usuário Logado com sucesso!", token: logInUser.token });
         
     }catch(e){
-        console.log(e);
         return res.status(500).json({ message: "Erro desconhecido ao tentar login." });
     }
 }
